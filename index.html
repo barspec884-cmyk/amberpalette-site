@@ -1,143 +1,183 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amber Palette</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amber Palette | Whisky Tasting Log</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-body{
-    margin:0;
-    font-family: "Helvetica Neue", sans-serif;
-    background:#0d0d0d;
-    color:#f5e6c8;
-    line-height:1.7;
-}
+    <style>
+        :root {
+            --primary-gold: #d6a85c;
+            --text-gold: #f5e6c8;
+            --bg-dark: #0d0d0d;
+            --bg-card: #1a1a1a;
+        }
 
-header{
-    text-align:center;
-    padding:100px 20px;
-    background:linear-gradient(180deg,#1a1a1a,#0d0d0d);
-}
+        body {
+            margin: 0;
+            font-family: 'Outfit', "Helvetica Neue", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-gold);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-h1{
-    font-size:48px;
-    letter-spacing:3px;
-}
+        /* ヒーローセクションを全画面に */
+        header {
+            text-align: center;
+            padding: 160px 20px;
+            background: radial-gradient(circle at center, #2c2112 0%, #0d0d0d 80%);
+            border-bottom: 1px solid rgba(214, 168, 92, 0.2);
+        }
 
-.tagline{
-    font-size:20px;
-    opacity:0.8;
-    margin-top:15px;
-}
+        h1 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(40px, 8vw, 64px);
+            letter-spacing: 0.1em;
+            margin: 0;
+            background: linear-gradient(to bottom, #f5e6c8, #d6a85c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 2s ease-out;
+        }
 
-section{
-    max-width:900px;
-    margin:auto;
-    padding:60px 20px;
-}
+        .tagline {
+            font-size: clamp(16px, 4vw, 22px);
+            opacity: 0.7;
+            margin-top: 20px;
+            letter-spacing: 0.2em;
+            font-weight: 300;
+        }
 
-h2{
-    color:#d6a85c;
-}
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 100px 24px;
+        }
 
-.app-buttons a{
-    display:inline-block;
-    margin:10px;
-    padding:15px 25px;
-    background:#d6a85c;
-    color:black;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
+        h2 {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--primary-gold);
+            font-size: 28px;
+            border-bottom: 1px solid var(--primary-gold);
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
 
-footer{
-    text-align:center;
-    padding:40px;
-    font-size:14px;
-    opacity:0.6;
-}
-footer a{
-    color:#f5e6c8;
-}
-</style>
+        /* 特徴リストのカード化 */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(214, 168, 92, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        /* アプリボタンのスタイリッシュ化 */
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .app-buttons a {
+            min-width: 180px;
+            padding: 18px 30px;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .app-buttons a:hover {
+            background: var(--primary-gold);
+            color: black;
+            box-shadow: 0 0 20px rgba(214, 168, 92, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            background: #000;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        footer a {
+            color: var(--text-gold);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<h1>Amber Palette</h1>
-<p class="tagline">
-Whiskyを「記録」から「理解」へ。
-</p>
+    <h1>Amber Palette</h1>
+    <p class="tagline">Whiskyを「記録」から「理解」へ。</p>
 </header>
 
-<section>
-<h2>Amber Paletteとは</h2>
-
-<p>
-Amber Paletteは、ウイスキーのテイスティングを記録し、
-味覚の理解を深めるためのデジタルプラットフォームです。
-</p>
-
-<p>
-色・香り・味わいを可視化し、
-あなただけの味覚データを蓄積します。
-</p>
-
+<section id="concept">
+    <h2>Amber Paletteとは</h2>
+    <p>Amber Paletteは、ウイスキーのテイスティングを記録し、味覚の探究を深めるためのデジタルプラットフォームです。</p>
+    <p>色・香り・味わいを精密に可視化し、あなただけの「味覚の地図」を構築。Bar SPECの思想を継承し、一杯のウイスキーに込められた物語を解き明かします。</p>
 </section>
 
-<section>
-<h2>主な機能</h2>
-
-<ul>
-<li>テイスティング記録</li>
-<li>フレーバーマッピング</li>
-<li>味覚履歴の分析</li>
-<li>教育コンテンツ（開発中）</li>
-<li>AIレコメンド（将来実装予定）</li>
-</ul>
-
+<section id="features" style="background: rgba(255,255,255,0.02);">
+    <div style="max-width: 800px; margin: auto;">
+        <h2>主な機能</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <strong>Tasting Log</strong><br>直感的なUIで繊細なフレーバーを記録
+            </div>
+            <div class="feature-item">
+                <strong>Mapping</strong><br>独自のアルゴリズムで味覚をチャート化
+            </div>
+            <div class="feature-item">
+                <strong>Education</strong><br>専門家監修のコンテンツ（開発中）
+            </div>
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>アプリをダウンロード</h2>
-
-<div class="app-buttons">
-<a href="#">App Store</a>
-<a href="#">Google Play</a>
-</div>
-
-</section>
-
-<section>
-<h2>Our Vision</h2>
-
-<p>
-Amber Paletteは、世界中のウイスキー愛好家の味覚データを集積し、
-文化・教育・研究の新しい形を創造することを目指しています。
-</p>
-
-</section>
-
-<section>
-<h2>About</h2>
-
-<p>
-Amber Paletteは、東京のウイスキーバー「Bar SPEC」の思想から生まれたプロジェクトです。
-</p>
-
+<section id="download">
+    <h2 style="display: block; text-align: center; border:none;">Experience Now</h2>
+    <div class="app-buttons">
+        <a href="#">App Store</a>
+        <a href="#">Google Play</a>
+    </div>
 </section>
 
 <footer>
-
-<p>© Thrivefull Co., Ltd.</p>
-
-<p>
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-
+    <p>© Thrivefull Co., Ltd. / Supported by Bar SPEC</p>
+    <p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
 </footer>
 
 </body>
