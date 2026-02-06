@@ -9,6 +9,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+	.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+  border-radius: 14px;
+  padding: 22px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 191, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #d4a017;
+  box-shadow: 0 8px 22px rgba(212,160,23,0.25);
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f4d37a;
+  letter-spacing: 0.05em;
+}
+
+.feature-sub {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #aaa;
+}
+
+	
 :root {
     --primary-gold: #d6a85c;
     --text-gold: #f5e6c8;
@@ -202,6 +242,16 @@ footer a {
     from{opacity:0;transform:translateY(20px);}
     to{opacity:1;transform:translateY(0);}
 }
+	.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #b8860b, #ffd700);
+}
+
 </style>
 </head>
 
@@ -222,10 +272,24 @@ footer a {
 <h2>主な機能</h2>
 
 <div class="feature-list">
-<a href="tasting-log.html" class="feature-item">Tasting Log</a>
-<a href="mapping.html" class="feature-item">Mapping</a>
-<a href="coming-soon.html" class="feature-item">Education</a>
+
+  <a href="tasting-log.html" class="feature-card">
+    <span class="feature-title">Tasting Log</span>
+    <span class="feature-sub">テイスティング記録</span>
+  </a>
+
+  <a href="mapping.html" class="feature-card">
+    <span class="feature-title">Mapping</span>
+    <span class="feature-sub">ウイスキーマッピング</span>
+  </a>
+
+  <a href="coming-soon.html" class="feature-card">
+    <span class="feature-title">Education</span>
+    <span class="feature-sub">学習コンテンツ</span>
+  </a>
+
 </div>
+
 </section>
 
 <section>
