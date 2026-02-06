@@ -86,12 +86,33 @@
             padding: 60px;
             border-top: 1px solid rgba(214, 168, 92, 0.1);
         }
+		/* 戻るボタンを中央下に配置するスタイル */
+.bottom-back {
+    text-align: center;    /* 横方向の中央揃え */
+    margin-top: 80px;      /* コンテンツとの間隔 */
+    padding-bottom: 40px;  /* 画面最下部との余白 */
+}
+
+.bottom-back a {
+    display: inline-block; /* 幅を持たせて中央に安定させる */
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(214, 168, 92, 0.4);
+    padding-bottom: 4px;
+    transition: 0.2s;
+}
+
+.bottom-back a:hover {
+    color: #fff;
+    border-color: var(--primary-gold);
+}
     </style>
 </head>
 <body>
 
-<nav class="back-nav">
-    <a href="index.html">← Back to Top</a>
+
 </nav>
 
 <section>
@@ -123,6 +144,10 @@
         <h3>3. Bar SPECの思想を反映</h3>
         <p>実店舗でのテイスティング体験に基づいた「本当に必要な項目」を厳選。プロのバーテンダーが隣でガイドしているような、心地よい記録体験を提供します。</p>
     </div>
+<div class="bottom-back">
+  <a href="index.html">← Return to Amber Palette</a>
+</div>
+
 </section>
 
 <footer>
