@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang='ja'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'><style>
+    body { display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; background: #0a0a0a; color: #eee; font-family: sans-serif; overflow-x: hidden; }
+    .admin-panel { background: #1a1a1a; padding: 15px; border-radius: 10px; margin: 10px; border: 1px solid #d4af37; width: 95vw; max-width: 800px; box-sizing: border-box; z-index: 1000; text-align: center; }
+    .input-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; justify-content: center; }
+    input, select, textarea { background: #333; color: #fff; border: 1px solid #444; padding: 10px; border-radius: 4px; font-size: 16px; }
+    #in-abv { width: 70px; }
+    #in-user { width: 120px; }
+    .coord-display { color: #d4af37; font-weight: bold; background: #000; padding: 2px 8px; border-radius: 3px; min-width: 40px; display: inline-block; }
+    .btn-main { background: #d4af37; color: #000; font-weight: bold; cursor: pointer; border: none; padding: 12px 24px; border-radius: 4px; font-size: 16px; }
+    
+    .matrix-board { 
+        position: relative; width: 95vw; height: 95vw; max-width: 600px; max-height: 600px; 
+        background-color: #fff; 
+        background-image: url('Matrix　中心.png'); /* ここを差し替え */
+        background-size: 100% 100%;
+        background-position: center; background-repeat: no-repeat; 
+        border: 2px solid #333; margin: 20px auto; overflow: hidden;
+        touch-action: none; /* スマホのスクロールを防止 */
+    }
+    .bottle { position: absolute; transform: translate(-50%, -50%); text-align: center; width: 80px; z-index: 10; pointer-events: none; }
+    .bottle img { width: 42px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 5px 12px rgba(0,0,0,0.4)); }
+    .label { display: inline-block; background: rgba(0,0,0,0.8); color: #fff; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-top: 3px; border: 0.5px solid #d4af37; white-space: nowrap; }
+    
+    .drag-target { cursor: move; pointer-events: auto !important; z-index: 9999; }
+    .drag-target img { width: 55px; border: 2px dashed #d4af37; border-radius: 50%; padding: 5px; background: rgba(212,175,55,0.1); }
+</style></head><body>
+
+<div class='admin-panel'>
+    <strong id="mode-title" style="color:#d4af37; display:block; margin-bottom:5px;">【Bar SPEC】Input-Matrix</strong>
+    <div class='input-row'>
+        <input type="text" id="in-user" placeholder="お名前" onchange="saveUser()">
+        <input type="text" id="in-brand" placeholder="銘柄名">
+        <input type="number" id="in-abv" value="43" step="0.1"> <span style="font-size:12px;">%</span>
+        <div style="font-size:14px; margin-left:10px;">R: <span id="xl-x" class="coord-display">0</span> S: <span id="xl-y" class="coord-display">0</span></div>
+        <button class="btn-main" onclick="addAndSend()">送信</button>
+    </div>
+    <div id="status" style="font-size:12px; color:#d4af37; margin-top:5px; min-height: 20px;"></div>
+</div>
+
+<div class='matrix-board' id="board" onmousemove="drag(event)" onmouseup="stopDrag()" ontouchmove="touchDrag(event)" ontouchend="stopDrag()">
+    <div class='bottle' style='left:50%; top:50%; opacity: 0.6;'><img src='JAPANESE/yamazaki.png'><span class='label'>山崎 (0,0)</span></div>
+    
+    <div id="drag-bottle" class="bottle drag-target" style="left:50%; top:50%;" onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
+        <img src="JAPANESE/sample-Bottle.png"><span class='label' style="background:#d4af37; color:#000;">★ここを動かす</span>
+    </div>
+</div>
+
+<script>
+let isDragging = false, webX = 50, webY = 50, xlRich = 0, xlSmoky = 0;
+const GAS_URL = "あなたのGASのURLをここに";
+
+function startDrag(e) { isDragging = true; if(e.cancelable) e.preventDefault(); }
+function stopDrag() { isDragging = false; }
+function touchDrag(e) { if(isDragging && e.touches.length > 0) updatePos(e.touches[0].clientX, e.touches[0].clientY); }
+function drag(e) { updatePos(e.clientX, e.clientY); }
+
+function updatePos(clientX, clientY) {
+    if (!isDragging) return;
+    const board = document.getElementById('board'), rect = board.getBoundingClientRect();
+    webX = Math.max(0, Math.min(100, (((clientX - rect.left) / rect.width) * 100).toFixed(2)));
+    webY = Math.max(0, Math.min(100, (((clientY - rect.top) / rect.height) * 100).toFixed(2)));
+    
+    // 相対評価の計算 (Rich:右正, Smoky:上正)
+    xlRich = Math.round(webX - 50);
+    xlSmoky = Math.round(50 - webY); 
+    
+    const d = document.getElementById('drag-bottle');
+    d.style.left = webX + '%'; d.style.top = webY + '%';
+    document.getElementById('xl-x').innerText = xlRich; 
+    document.getElementById('xl-y').innerText = xlSmoky;
+}
+// 送信処理（addAndSend）などはそのまま継続
+</script></body></html>
