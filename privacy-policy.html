@@ -1,72 +1,107 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>プライバシーポリシー</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Amber Palette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #d6a85c; --text-dark: #333; --bg-light: #fff; }
+        body { 
+            margin: 0; padding: 40px 20px; 
+            font-family: 'Outfit', "Helvetica Neue", Arial, sans-serif; 
+            line-height: 1.8; color: var(--text-dark); background: var(--bg-light); 
+        }
+        .container { max-width: 800px; margin: auto; }
+        
+        /* Language Switcher */
+        .lang-switch { text-align: right; margin-bottom: 40px; }
+        .lang-switch button { 
+            background: none; border: 1px solid #ccc; padding: 5px 15px; 
+            cursor: pointer; border-radius: 20px; font-size: 13px; transition: 0.3s;
+        }
+        .lang-switch button.active { background: var(--primary-gold); color: white; border-color: var(--primary-gold); }
+
+        h1 { border-bottom: 2px solid var(--primary-gold); padding-bottom: 10px; font-size: 28px; }
+        h2 { margin-top: 40px; font-size: 20px; color: #000; border-left: 4px solid var(--primary-gold); padding-left: 15px; }
+        ul { padding-left: 20px; }
+        .footer-info { margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666; }
+    </style>
 </head>
 <body>
-<h1>プライバシーポリシー</h1>
 
-<p>株式会社スライヴフル（Thrivefull Co., Ltd.）
-（以下「当社」といいます）は、本アプリにおける利用者情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
+<div class="container">
+    <div class="lang-switch">
+        <button id="btn-ja" onclick="updateLang('ja')" class="active">日本語</button>
+        <button id="btn-en" onclick="updateLang('en')">English</button>
+    </div>
 
-<h2>1. 取得する情報</h2>
-<p>当社は、本アプリにおいて以下の情報を取得します。</p>
-<ul>
-  <li>メールアドレス（ログイン時）</li>
-  <li>GoogleアカウントまたはApple IDによる認証情報</li>
-  <li>ウイスキーの記録内容（銘柄、感想、日時、場所等）</li>
-  <li>位置情報（飲んだ場所の記録のため）</li>
-  <li>利用状況に関する情報（アクセス解析情報）</li>
-</ul>
+    <h1 class="trans" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</h1>
 
-<h2>2. 利用目的</h2>
-<p>取得した情報は、以下の目的のために利用します。</p>
-<ul>
-  <li>本サービスの提供および運営のため</li>
-  <li>ユーザー認証および本人確認のため</li>
-  <li>記録データの保存および管理のため</li>
-  <li>サービス改善および機能向上のため</li>
-  <li>不正利用防止のため</li>
-</ul>
+    <p class="trans" 
+       data-ja="株式会社スライヴフル（以下「当社」）は、提供するアプリケーション「Amber Palette」（以下「本アプリ」）における利用者情報の取扱いについて、以下のとおり定めます。" 
+       data-en="Thrivefull Co., Ltd. (hereinafter referred to as 'the Company') establishes this Privacy Policy regarding the handling of user information in the application 'Amber Palette' (hereinafter referred to as 'the App').">
+       株式会社スライヴフル（以下「当社」）は、提供するアプリケーション「Amber Palette」（以下「本アプリ」）における利用者情報の取扱いについて、以下のとおり定めます。
+    </p>
 
-<h2>3. データの保存</h2>
-<p>本アプリで入力されたデータは、クラウド上に保存され、当社が適切に管理します。</p>
+    <h2 class="trans" data-ja="1. 取得する情報" data-en="1. Information We Collect">1. 取得する情報</h2>
+    <p class="trans" data-ja="当社は、本アプリにおいて以下の情報を取得します。" data-en="The Company collects the following information through the App:">当社は、本アプリにおいて以下の情報を取得します。</p>
+    <ul>
+        <li class="trans" data-ja="メールアドレスおよび認証情報" data-en="Email address and authentication information">メールアドレスおよび認証情報</li>
+        <li class="trans" data-ja="ウイスキーのテイスティング記録（銘柄、感想、写真等）" data-en="Whisky tasting records (brand, impressions, photos, etc.)">ウイスキーのテイスティング記録（銘柄、感想、写真等）</li>
+        <li class="trans" data-ja="位置情報（飲酒場所の記録用。ユーザーの許可がある場合のみ）" data-en="Location data (for recording drinking locations, only with user consent)">位置情報（飲酒場所の記録用。ユーザーの許可がある場合のみ）</li>
+        <li class="trans" data-ja="利用状況に関する分析データ（Google Analytics等）" data-en="Usage analytics data (e.g., Google Analytics)">利用状況に関する分析データ（Google Analytics等）</li>
+    </ul>
 
-<h2>4. 第三者提供</h2>
-<p>当社は、法令に基づく場合を除き、利用者の同意なく個人情報を第三者に提供することはありません。</p>
-<p>将来的に、利用者自身の意思により記録内容を他の利用者に公開する機能を提供する場合があります。その場合、公開範囲は利用者自身が設定できるものとします。</p>
+    <h2 class="trans" data-ja="2. 利用目的" data-en="2. Purpose of Use">2. 利用目的</h2>
+    <ul>
+        <li class="trans" data-ja="本アプリの提供・運営および本人確認のため" data-en="To provide and operate the App and perform user authentication">本アプリの提供・運営および本人確認のため</li>
+        <li class="trans" data-ja="ユーザーが入力したデータの保存・管理のため" data-en="To store and manage data entered by the user">ユーザーが入力したデータの保存・管理のため</li>
+        <li class="trans" data-ja="サービスの改善および新機能開発のため" data-en="To improve the service and develop new features">サービスの改善および新機能開発のため</li>
+    </ul>
 
-<h2>5. 外部サービスの利用</h2>
-<ul>
-  <li>Firebase Authentication（認証）</li>
-  <li>Firebase（データ保存）</li>
-  <li>Google Analytics 等のアクセス解析ツール</li>
-</ul>
-<p>これらのサービスにより取得された情報は、各サービス提供者のプライバシーポリシーに基づいて管理されます。</p>
+    <h2 class="trans" data-ja="3. データの削除について" data-en="3. Data Deletion">3. データの削除について</h2>
+    <p class="trans" 
+       data-ja="利用者は、本アプリ内の設定またはお問い合わせ窓口を通じて、自身の個人情報の削除をリクエストすることができます。当社は、法令に従い速やかに適切な対応を行います。" 
+       data-en="Users may request the deletion of their personal information through the App settings or by contacting our support desk. We will respond promptly in accordance with applicable laws.">
+       利用者は、自身の個人情報の削除をリクエストすることができます。当社は、法令に従い速やかに対応を行います。
+    </p>
 
-<h2>6. サブスクリプションについて</h2>
-<p>本アプリは有料サブスクリプションを提供しています。課金情報はAppleまたはGoogleが管理し、当社はクレジットカード情報を取得しません。</p>
+    <h2 class="trans" data-ja="4. 未成年者の利用禁止" data-en="4. Prohibition of Use by Minors">4. 未成年者の利用禁止</h2>
+    <p class="trans" 
+       data-ja="本アプリはアルコール飲料に関するサービスであるため、20歳未満の方、または居住国の法律で定められた法定飲酒年齢に満たない方は、本アプリを利用することはできません。" 
+       data-en="As this App is a service related to alcoholic beverages, it is not available to persons under the age of 20 or the legal drinking age in their jurisdiction.">
+       本アプリはアルコール飲料に関するサービスであるため、20歳未満の方は利用できません。
+    </p>
 
-<h2>7. 未成年者の利用について</h2>
-<p>本アプリはアルコール飲料に関する記録サービスであるため、20歳未満の方は利用できません。利用者は、自らが20歳以上であることを保証するものとします。</p>
+    <h2 class="trans" data-ja="5. 免責事項" data-en="5. Disclaimer">5. 免責事項</h2>
+    <p class="trans" 
+       data-ja="当社は、本アプリの利用によって生じた健康上の問題、事故、法的トラブル等について一切の責任を負いません。飲酒は適量を守り、各国の法律を遵守してください。" 
+       data-en="The Company assumes no responsibility for any health issues, accidents, or legal problems arising from the use of the App. Please drink responsibly and comply with local laws.">
+       当社は、本アプリの利用によって生じたトラブル等について一切の責任を負いません。飲酒は適量を守ってください。
+    </p>
 
-<h2>8. 飲酒に関する注意事項</h2>
-<p>本アプリは、飲酒を推奨または助長するものではありません。利用者は、法令および社会的マナーを遵守し、適量を守って飲酒するものとします。</p>
-<p>本アプリの利用により生じた飲酒に関する健康上、事故上、または法的な問題について、当社は一切の責任を負いません。</p>
+    <div class="footer-info">
+        <p><strong>Thrivefull Co., Ltd.</strong><br>
+        Email: info@amberpalette.jp<br>
+        <span class="trans" data-ja="改定日：2026年2月6日" data-en="Revised: February 6, 2026">改定日：2026年2月6日</span></p>
+    </div>
+</div>
 
-<h2>9. 個人情報の開示・削除</h2>
-<p>利用者は、当社に対し、自己の個人情報の開示・訂正・削除を請求することができます。</p>
+<script>
+function updateLang(lang) {
+    localStorage.setItem("preferredLang", lang);
+    document.querySelectorAll('.trans').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+    });
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
 
-<h2>10. プライバシーポリシーの変更</h2>
-<p>当社は、必要に応じて本ポリシーを変更することがあります。変更後の内容は、本アプリまたは当社ウェブサイトに掲載します。</p>
-
-<h2>11. お問い合わせ先</h2>
-<p>
-株式会社スライヴフル（Thrivefull Co., Ltd.）
-<br>
-info@amberpalette.jp
-</p>
-
+window.onload = function() {
+    const savedLang = localStorage.getItem("preferredLang") || 'ja';
+    updateLang(savedLang);
+}
+</script>
 </body>
 </html>
