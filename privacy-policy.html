@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Amber Palette</title>
+    <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --primary-gold: #d6a85c; --text-dark: #333; --bg-light: #fff; }
@@ -22,6 +23,8 @@
         h1 { border-bottom: 2px solid var(--primary-gold); padding-bottom: 10px; font-size: 28px; }
         h2 { margin-top: 40px; font-size: 20px; color: #000; border-left: 4px solid var(--primary-gold); padding-left: 15px; }
         ul { padding-left: 20px; }
+        .contact-email { margin: 10px 0; font-size: 16px; }
+        .contact-email a { color: #000; font-weight: 600; }
         .footer-info { margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666; }
     </style>
 </head>
@@ -64,34 +67,34 @@
     </p>
 
     <h2 class="trans" data-ja="4. データの削除について" data-en="4. Data Deletion">4. データの削除について</h2>
-<p class="trans" 
-data-ja="利用者は、本アプリ内の設定画面またはサポート窓口を通じて、アカウントおよび個人情報の削除を申請することができます。
-
-削除申請を行う場合は、登録時に使用したメールアドレスから以下の窓口へご連絡ください。
-
-メールアドレス：info@amberpalette.jp
-
-削除申請が承認された場合、以下の情報が削除されます。
-・アカウント情報
-・認証情報に紐づく識別子
-・本アプリ内で保存された記録データ
-
-なお、法令等に基づき保存が義務付けられている情報については、必要な期間保存される場合があります。" 
-
-data-en="Users may request deletion of their account and personal information through the App settings or by contacting our support desk.
-
-To submit a deletion request, please contact us using the email address registered with your account.
-
-Contact Email: info@amberpalette.jp
-
-If the deletion request is approved, the following information will be deleted:
-• Account information
-• Identifiers associated with authentication
-• Records and data stored within the App
-
-Please note that certain information may be retained for a required period in accordance with applicable laws and regulations.">
-利用者は、本アプリ内の設定またはお問い合わせ窓口を通じて、自身の個人情報の削除をリクエストすることができます。当社は、法令に従い速やかに適切な対応を行います。
-</p>
+    <p class="trans"
+       data-ja="利用者は、本アプリ内の設定画面またはサポート窓口を通じて、アカウントおよび個人情報の削除を申請することができます。"
+       data-en="Users may request deletion of their account and personal information through the App settings screen or by contacting our support desk.">
+       利用者は、本アプリ内の設定画面またはサポート窓口を通じて、アカウントおよび個人情報の削除を申請することができます。
+    </p>
+    <p class="trans"
+       data-ja="削除申請を行う場合は、登録時に使用したメールアドレスから以下の窓口へご連絡ください。"
+       data-en="To submit a deletion request, please contact us from the email address you used to register:">
+       削除申請を行う場合は、登録時に使用したメールアドレスから以下の窓口へご連絡ください。
+    </p>
+    <p class="contact-email">
+       <strong>Email:</strong> <a href="mailto:amber.palette.spec@gmail.com">amber.palette.spec@gmail.com</a>
+    </p>
+    <p class="trans"
+       data-ja="削除申請が承認された場合、以下の情報が削除されます。"
+       data-en="If the deletion request is approved, the following information will be deleted:">
+       削除申請が承認された場合、以下の情報が削除されます。
+    </p>
+    <ul>
+       <li class="trans" data-ja="アカウント情報" data-en="Account information">アカウント情報</li>
+       <li class="trans" data-ja="認証情報に紐づく識別子" data-en="Identifiers associated with authentication">認証情報に紐づく識別子</li>
+       <li class="trans" data-ja="本アプリ内で保存された記録データ" data-en="Records and data stored within the App">本アプリ内で保存された記録データ</li>
+    </ul>
+    <p class="trans"
+       data-ja="なお、法令等に基づき保存が義務付けられている情報については、必要な期間保存される場合があります。"
+       data-en="Please note that certain information may be retained for a required period in accordance with applicable laws and regulations.">
+       なお、法令等に基づき保存が義務付けられている情報については、必要な期間保存される場合があります。
+    </p>
 
     <h2 class="trans" data-ja="5. 未成年者の利用禁止" data-en="5. Prohibition of Use by Minors">5. 未成年者の利用禁止</h2>
     <p class="trans" 
@@ -109,8 +112,8 @@ Please note that certain information may be retained for a required period in ac
 
     <div class="footer-info">
         <p><strong>Thrivefull Co., Ltd.</strong><br>
-        Email: info@amberpalette.jp<br>
-        <span class="trans" data-ja="改定日：2026年2月5日" data-en="Revised: February 5, 2026">改定日：2026年2月5日</span></p>
+        Email: amber.palette.spec@gmail.com<br>
+        <span class="trans" data-ja="改定日：2026年8月25日" data-en="Revised: August 25, 2026">改定日：2026年8月25日</span></p>
     </div>
 </div>
 
@@ -122,6 +125,7 @@ function updateLang(lang) {
     });
     document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
 }
 
 window.onload = function() {

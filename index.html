@@ -137,6 +137,118 @@ h2 {
     color: #aaa;
 }
 
+/* Feature Showcase（画面を大きく見せる） */
+.showcase {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-top: 70px;
+}
+
+.showcase.reverse {
+    flex-direction: row-reverse;
+}
+
+.showcase-media {
+    flex: 0 0 42%;
+    display: flex;
+    justify-content: center;
+}
+
+.showcase-media img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 22px;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.55);
+}
+
+.media-placeholder {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 2.1;
+    border: 1px dashed var(--primary-gold);
+    border-radius: 22px;
+    background: rgba(214,168,92,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--primary-gold);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+}
+
+.media-placeholder span {
+    margin-top: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+}
+
+.showcase-body {
+    flex: 1;
+}
+
+.showcase-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--primary-gold);
+    opacity: 0.85;
+    margin-bottom: 12px;
+}
+
+.showcase-body h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 30px;
+    color: var(--text-gold);
+    margin: 0 0 6px;
+}
+
+.showcase-lead {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--primary-gold);
+    font-size: 20px;
+    margin: 0 0 18px;
+}
+
+.showcase-body p {
+    color: rgba(245,230,200,0.82);
+    margin: 0;
+}
+
+/* サブ機能（控えめに小さく見せる） */
+.showcase.sub {
+    margin-top: 60px;
+}
+
+.showcase.sub .showcase-media img {
+    max-width: 200px;
+}
+
+.showcase.sub .showcase-body h3 {
+    font-size: 24px;
+}
+
+.showcase.sub .showcase-lead {
+    font-size: 17px;
+}
+
+@media (max-width: 640px) {
+    .showcase,
+    .showcase.reverse {
+        flex-direction: column;
+        gap: 26px;
+        margin-top: 56px;
+    }
+    .showcase-media { flex: none; width: 100%; }
+    .showcase-body { text-align: center; }
+}
+
 /* Buttons */
 .app-buttons {
     display: flex;
@@ -333,16 +445,40 @@ footer a:hover {
 <section style="background:rgba(255,255,255,0.02);">
 <h2>主な機能</h2>
 
-<div class="feature-list">
-    <a href="tasting-log.html" class="feature-card">
-      <span class="feature-title">Tasting Log</span>
-      <span class="feature-sub">テイスティング記録</span>
-    </a>
+<div class="showcase">
+  <div class="showcase-media">
+    <img src="aroma-balance.jpg" alt="Aroma Balance の画面：香りの構成を円環チャートで可視化" loading="lazy">
+  </div>
+  <div class="showcase-body">
+    <span class="showcase-eyebrow">FEATURE 01</span>
+    <h3>Aroma Balance</h3>
+    <p class="showcase-lead">香りを、目で見る。</p>
+    <p>スモーキー、フルーティー、フローラル——感じた香りをタップで積み上げると、その一杯の個性が円環チャートに浮かび上がります。Radar / Profile / Volume の3つの視点で、香りのバランスを多角的に捉えられます。</p>
+  </div>
+</div>
 
-    <a href="mapping.html" class="feature-card">
-      <span class="feature-title">Mapping</span>
-      <span class="feature-sub">ウイスキーマッピング</span>
-    </a>
+<div class="showcase reverse">
+  <div class="showcase-media">
+    <img src="tasting-matrix.png" alt="Whisky Tasting Matrix の画面：記録した銘柄を3D空間で比較" loading="lazy">
+  </div>
+  <div class="showcase-body">
+    <span class="showcase-eyebrow">FEATURE 02</span>
+    <h3>3D Matrix</h3>
+    <p class="showcase-lead">銘柄を、立体で見比べる。</p>
+    <p>記録したウイスキーを3D空間に並べて、複数の銘柄を見比べることができます。ドラッグで360°回転、Top / Side / Front の切り替えにも対応しています。</p>
+  </div>
+</div>
+
+<div class="showcase sub">
+  <div class="showcase-media">
+    <img src="intensity-balance.jpg" alt="Intensity Balance の画面：味の強さを6軸のレーダーチャートで表示" loading="lazy">
+  </div>
+  <div class="showcase-body">
+    <span class="showcase-eyebrow">ALSO</span>
+    <h3>Intensity Balance</h3>
+    <p class="showcase-lead">強さのバランスを、ひと目で。</p>
+    <p>香りの強さ・厚み・キレ・刺激・締まり・余韻——一杯の印象を6つの軸で採点し、レーダーチャートで可視化します。</p>
+  </div>
 </div>
 </section>
 
