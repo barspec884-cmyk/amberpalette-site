@@ -328,6 +328,68 @@ h2 {
     box-shadow: 0 0 20px rgba(214,168,92,0.4);
 }
 
+/* YouTube チャンネル紹介 */
+.youtube-section {
+    max-width: none;
+    padding-left: max(24px, calc((100% - 800px) / 2));
+    padding-right: max(24px, calc((100% - 800px) / 2));
+    text-align: center;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(214,168,92,0.14), transparent 55%),
+        #080808;
+    border-top: 1px solid rgba(214,168,92,0.18);
+    border-bottom: 1px solid rgba(214,168,92,0.18);
+}
+
+.youtube-eyebrow {
+    display: block;
+    color: var(--primary-gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+}
+
+.youtube-section h2 {
+    display: block;
+    margin: 12px 0 20px;
+    padding: 0;
+    border: 0;
+    color: #fff4dc;
+    font-size: clamp(26px, 5vw, 36px);
+}
+
+.youtube-section p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: rgba(245,230,200,0.82);
+}
+
+.youtube-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 14px 26px;
+    border: 1px solid var(--primary-gold);
+    border-radius: 50px;
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.youtube-button:hover {
+    background: var(--primary-gold);
+    color: #000;
+    box-shadow: 0 0 20px rgba(214,168,92,0.4);
+}
+
+.youtube-button svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
 /* キーボード操作時にフォーカスが見えるように（アクセシビリティ・追加） */
 a:focus-visible,
 button:focus-visible {
@@ -489,15 +551,19 @@ footer a:hover {
 </div>
 </section>
 
+<section class="youtube-section">
+  <span class="youtube-eyebrow">AMBER PALETTE OFFICIAL YOUTUBE</span>
+  <h2>日本の蒸溜所を、順次ご紹介。</h2>
+  <p>Amber Palette公式YouTubeチャンネルでは、日本各地のウイスキー蒸溜所に焦点を当て、それぞれの特色やウイスキーづくりの魅力を映像でお届けします。</p>
+  <a class="youtube-button" href="https://www.youtube.com/@amberpalettejp" target="_blank" rel="noopener noreferrer" aria-label="Amber Palette公式YouTubeで蒸溜所紹介を見る">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+    <span>蒸溜所紹介を見る</span>
+  </a>
+</section>
+
 <footer>
 <img src="logo.png" alt="Bar SPEC" class="footer-logo">
 <p>© Thrivefull Co., Ltd. / Supported by Bar SPEC</p>
-<div class="footer-social">
-    <a href="https://www.youtube.com/@amberpalettejp" target="_blank" rel="noopener noreferrer" aria-label="Amber Palette 公式YouTubeチャンネル">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
-        <span>YouTube チャンネル</span>
-    </a>
-</div>
 <div class="footer-links">
     <a href="terms-of-service.html">ご利用規約</a>
     <a href="privacy-policy.html">プライバシーポリシー</a>
