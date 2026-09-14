@@ -257,6 +257,59 @@ h2 {
     flex-wrap: wrap;
 }
 
+.purchase-benefit {
+    max-width: 620px;
+    margin: 0 auto 34px;
+    padding: 28px 24px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(214,168,92,0.18), rgba(214,168,92,0.05));
+    border: 1px solid rgba(214,168,92,0.65);
+    border-radius: 16px;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.28);
+}
+
+.purchase-benefit-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+.purchase-benefit strong {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    color: #fff4dc;
+    font-size: clamp(22px, 5vw, 32px);
+    line-height: 1.5;
+}
+
+.purchase-benefit strong em {
+    color: #ffd477;
+    font-size: 1.25em;
+    font-style: normal;
+}
+
+.benefit-saving {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 9px 18px;
+    color: #1a1206;
+    background: linear-gradient(135deg, #f5e6c8, #d6a85c);
+    border-radius: 50px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(15px, 3.6vw, 18px);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.purchase-benefit p {
+    margin: 10px 0 0;
+    color: rgba(245,230,200,0.78);
+    font-size: 14px;
+}
+
 .app-buttons a {
     min-width: 180px;
     padding: 18px 30px;
@@ -419,7 +472,14 @@ footer a:hover {
 </section>
 
 <section>
-<h2 style="text-align:center;border:none;display:block;">販売</h2>
+<h2 style="text-align:center;border:none;display:block;">ご購入・特典</h2>
+
+<div class="purchase-benefit">
+  <span class="purchase-benefit-label">BAR SPEC SPECIAL BENEFIT</span>
+  <strong>Bar SPECなら、ご来店ごとに<em>100円OFF</em></strong>
+  <span class="benefit-saving">月3回のご来店で、アプリ代が実質0円に。</span>
+  <p>ご注文時にAmber Paletteのアプリ画面をご提示ください。<br>※1回のご来店につき100円引き</p>
+</div>
 
 <div class="app-buttons">
 <a href="https://apps.apple.com/jp/app/amber-palette/id6756965664"
